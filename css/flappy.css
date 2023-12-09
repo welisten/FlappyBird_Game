@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+/* estilo.css */
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #0D262D;
+    color: #fff;
+    height: 100%;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+}
+
+.exercicio div {
+    font-size: 3em;
+    border: solid 5px #fff;
+    padding: 20px 40px;
+    margin: 10px;
+}
+
+
+
+
+/* ==================== */
+[wm-flappy]{
+    position: relative;
+    border: 5px solid dodgerblue;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
+    background:linear-gradient(45deg, #a5e1f5 25%, #049dcf) ;
+    overflow: hidden;
+}
+
+.passaro {
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 30px);
+    z-index: 10;
+}
+
+.par-de-barreiras{
+    position: absolute;
+    top: 0;
+    height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 9;
+}
+
+.barreira{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barreira .borda{
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg,#a5e82e, #639301);
+    border: 2px solid #304605
+}
+
+.barreira .corpo{
+    height: 150px;
+    width: 110px;
+    background: linear-gradient(90deg,#a5e82e, #639301);
+    border-left:  2px solid #304605;
+    border-right: 2px solid #304605;
+} 
+
+.chao{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    height: 20px;
+    width: 100%;
+}
+
+.fundo{
+    position: absolute;
+    bottom: 20px;
+    width: 50%;
+    z-index: 8;
+}
+
+.fundo:nth-of-type(1){
+    left: 50%;
+}
+
+.sol{
+    position: absolute;
+    z-index: 7;
+    width: 300px;
+    top: 30%;
+}
+
+
+.progresso{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Pixel';
+    font-size: 70px;
+    z-index: 10 ;
+}
+
+.chao2{
+    position: absolute;
+    bottom: 0px;
+    left: 238px;
+    height: 20px;
+}
+.chao3{
+    position: absolute;
+    bottom: 0px;
+    left: 476px;
+    height: 20px;
+}
+.chao4{
+    position: absolute;
+    bottom: 0px;
+    left: 714px;
+    height: 20px;
+}
+.chao5{
+    position: absolute;
+    bottom: 0px;
+    left: 952px;
+    height: 20px;
+}

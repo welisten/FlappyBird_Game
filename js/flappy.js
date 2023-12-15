@@ -1,4 +1,10 @@
 
+const playButton =  document.querySelector('#play')
+const replayButton =  document.querySelector('#replay')
+const modalPlay  =  document.querySelector('#modal-play')
+const modalReplay  =  document.querySelector('#modal-replay')
+const fadeEl     =  document.querySelector('#fade')
+
 function novoElemento(tagName, className){
     const elemento = document.createElement(tagName);
     elemento.className = className
@@ -185,13 +191,30 @@ function FlappyBird() {
             passaro.animar()
 
             if(colidiu(passaro, barreiras)){
+                //alterar
+                current = null
                 clearInterval(temporizador)
+                fadeEl.classList.toggle('hiden')
+                modalReplay.classList.toggle('hiden')
             }
         }, 20)
     }
 }
 
-new FlappyBird().start()
+const current = new FlappyBird()
+
+replayButton.addEventListener('click', (e) => {
+    modalReplay.classList.toggle('hiden')
+    fadeEl.classList.toggle('hiden')
+    current = null
+
+})
+
+playButton.addEventListener('click', (el) => {
+    modalPlay.classList.add('hiden')
+    fadeEl.classList.toggle('hiden')
+    current.start()
+})
 // FlappyBird()
 
 //adicionar os elementos de fundo(chão, fundo e sol) dinamicamento no documento

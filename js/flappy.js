@@ -4,13 +4,16 @@ const replayButton =  document.querySelector('#replay')
 const modalPlay  =  document.querySelector('#modal-play')
 const modalReplay  =  document.querySelector('#modal-replay')
 const fadeEl     =  document.querySelector('#fade')
+let score = ''
 
+// compartimentar
 function novoElemento(tagName, className){
     const elemento = document.createElement(tagName);
     elemento.className = className
 
     return elemento
 }
+
 
 function Barreira(reversa = false){
     this.elemento = novoElemento('div', 'barreira') 
@@ -22,6 +25,13 @@ function Barreira(reversa = false){
     this.elemento.appendChild(reversa ? borda : corpo)
 
     this.setAltura = altura => corpo.style.height = `${altura}px`
+    
+    this.killElement = function() {
+        if(this.elemento !== null){
+            this.elemento.parentNode.removeChild(this.elemento)
+            this.elemento = null
+        }
+    }
 }
 
 //                     TESTE
@@ -49,11 +59,17 @@ function ParDeBarreira(altura, abertura, x){
     this.getX = () => parseInt(this.elemento.style.left.split('px')[0])
     this.setX = x => this.elemento.style.left = `${x}px`
     this.getLargura = () => this.elemento.clientWidth
-    
+    this.killElement= function(){
+        if(this.elemento !== null){
+            this.elemento.parentNode.removeChild(this.elemento)
+            this.elemento = null
+        }
+    }
     
     this.sortearAbertura()
     this.setX(x)
 }
+
 
 //                     TESTE
 // const b = new ParDeBarreira(480, 200, 500)
@@ -66,7 +82,7 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto){
         new ParDeBarreira(altura, abertura, largura + espaco * 2),
         new ParDeBarreira(altura, abertura, largura + espaco * 3)
     ]
-    
+
     const deslocamento = 3   
 
     this.animar = () => {
@@ -84,7 +100,25 @@ function Barreiras(altura, largura, abertura, espaco, notificarPonto){
                 cruzouOMeio && notificarPonto()
         })
     }
+
+    this.killElement = function () {
+        this.pares.forEach(par => {
+            if( par !== null){
+                par.superior.killElement()
+                par.inferior.killElement()
+                par.elemento.parentNode.removeChild(par.elemento)
+                par.elemento = null
+                par = null
+            }
+        })
+    }
 }
+
+const barreiras = new Barreiras()
+barreiras.pares.forEach(par => document.querySelector('[wm-flappy]').appendChild(par.elemento))
+console.log(barreiras, barreiras.pares)
+barreiras.killElement()
+console.log(barreiras)
 //                     TESTE
 // const b = new Barreiras(470, 1200, 200, 400)
 // const areaDoJogo = document.querySelector('[wm-flappy]') 
@@ -101,6 +135,14 @@ function Passaro(alturaJogo){
 
     this.getY = () => parseInt(this.elemento.style.bottom.split('px')[0])
     this.setY = (y) => this.elemento.style.bottom = `${y}px`
+
+    this.killElement = function () {
+        if( this.elemento !== null){
+            this.elemento.parentNode.removeChild(this.elemento)
+            this.elemento = null
+        }
+        
+    }
 
     window.onkeydown = e => voando = true
     window.onkeyup = e => voando = false
@@ -126,6 +168,15 @@ function Progresso() {
     this.elemento = novoElemento('span', 'progresso')
     this.atualizarPontos = ponto => {
         this.elemento.innerHTML    = ponto
+        score = ponto
+    }
+
+    this.killElement = function () {
+        if( this.elemento !== null){
+            this.elemento.parentNode.removeChild(this.elemento)
+            this.elemento = null
+        }
+        
     }
     
     this.atualizarPontos(0)
@@ -192,18 +243,25 @@ function FlappyBird() {
 
             if(colidiu(passaro, barreiras)){
                 //alterar
-                current = null
                 clearInterval(temporizador)
                 fadeEl.classList.toggle('hiden')
                 modalReplay.classList.toggle('hiden')
+                current = null
             }
         }, 20)
     }
+
+    this.killAllElements = function() {
+        barreiras.killElement()
+        passaro.killElement()
+        progresso.killElement()
+    }
 }
 
-const current = new FlappyBird()
+let current = new FlappyBird()
 
 replayButton.addEventListener('click', (e) => {
+    current.killAllElements()
     modalReplay.classList.toggle('hiden')
     fadeEl.classList.toggle('hiden')
     current = null

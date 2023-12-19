@@ -35,12 +35,7 @@ body {
     min-height: 100%;
 }
 
-.exercicio div {
-    font-size: 3em;
-    border: solid 5px #fff;
-    padding: 20px 40px;
-    margin: 10px;
-}
+
 
 
 
@@ -51,6 +46,7 @@ body {
     border: 5px solid dodgerblue;
     height: 700px;
     width: 1200px;
+    max-width: 90%;
     margin: 15px;
     background:linear-gradient(45deg, #a5e1f5 25%, #049dcf) ;
     overflow: hidden;
@@ -120,7 +116,6 @@ body {
     top: 30%;
 }
 
-
 .progresso{
     position: absolute;
     top: 10px;
@@ -153,4 +148,84 @@ body {
     bottom: 0px;
     left: 952px;
     height: 20px;
+}
+
+
+/* ================== MODALS ================== */
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 15;
+    pointer-events: none;
+    padding: 1rem;
+}
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0D262D;
+    border: 3px solid #049dcf;
+    padding: 1rem;
+    z-index: 20;
+
+}
+
+.modal-header, .modal-body{
+    width: 90%;
+    text-align: center;
+    border-bottom: 1px solid #049dcf;
+    margin-bottom: .5rem;
+    padding-bottom: .5rem;
+}
+
+.modal-header h1{
+    color: #fee500;
+    margin: 0;
+    letter-spacing: 2px;
+    font-size: 3rem;
+}
+
+.modal-button{
+    padding: 8px 30px;
+    margin: 1rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #ddb811;
+    color: #fff;
+    font-family: 'Pixel';
+    text-transform: uppercase;
+    font-size: 2rem;
+    pointer-events: all;
+    transition: all 0.5s ease;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.modal-button i{
+    font-size: 1.9rem;
+    margin-left: 1rem;
+}
+
+.modal-button:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#modal-play.hiden, #fade.hiden{
+    opacity: 0;
+}
+#modal-replay{
+    opacity: 0;
+}
+#modal-replay.hiden{
+    opacity: 1;
 }

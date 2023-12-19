@@ -1,14 +1,52 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <title>Flappy Bird</title>
-    <link rel="stylesheet" href="css/estilo.css">
+    <!-- ============== CSS =============== -->
     <link rel="stylesheet" href="css/flappy.css">
+    <!-- ========== Font Awesome ========== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body class="conteudo">
+    <div id="fade">
+        <div class="modal" id="modal-play">
+            <div class="modal-header">
+                <h1>Flappy Bird</h1>
+            </div>
+            
+            <div class="modal-body">
+                <p>
+                    Este projeto tem como proposta a reprodução do famoso jogo Flappy Bird, utilizando HTML, CSS e JavaScript como ferramentas principais de desenvolvimento
+                </p>
+                <p>
+                    Ao recriar o Flappy Bird, exploramos não apenas a diversão do jogo, mas também a oportunidade de aprimorar habilidades em programação web, promovendo uma experiência de aprendizado envolvente e prática.
+                </p>
+                <button class="modal-button" id="play">Jogar<i class="fa-solid fa-play"></i></button>
+            </div>
+
+            <div class="modal-footer">
+                <small>desenvolvido por </small>
+                <small>welistenw@gmail.com</small>
+            </div>
+        </div>
+        <div class="modal" id="modal-replay">
+            <div class="modal-header">
+                <h1>Flappy Bird</h1>
+            </div>
+                <h2>Score: 025</h2>
+                <button class="modal-button" id="replay">Jogar Novamente <i class="fa-solid fa-rotate-right"></i></button>
+            <div class="modal-body"></div>
+
+            <div class="modal-footer">
+                <small>desenvolvido por wesley weliten</small>
+                <small>welistenw@gmail.com</small>
+            </div>
+        </div>
+    </div>
     <h1>Flappy Bird</h1>
     <div wm-flappy>
         <img class="fundo" src="./imgs/fundo.png" alt="">

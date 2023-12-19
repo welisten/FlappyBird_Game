@@ -186,6 +186,7 @@ function FlappyBird() {
 
             if(colidiu(passaro, barreiras)){
                 clearInterval(temporizador)
+                // mostrar modal
             }
         }, 20)
     }

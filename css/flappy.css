@@ -179,6 +179,9 @@ body {
     z-index: 20;
 
 }
+#modal-replay{
+    min-width: 500px;
+}
 
 .modal-header, .modal-body{
     width: 90%;

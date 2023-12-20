@@ -4,8 +4,7 @@ const replayButton =  document.querySelector('#replay')
 const modalPlay  =  document.querySelector('#modal-play')
 const modalReplay  =  document.querySelector('#modal-replay')
 const fadeEl     =  document.querySelector('#fade')
-let score = ''
-
+const scoreEl    = modalReplay.querySelector('h2')
 
 // compartimentar
 function novoElemento(tagName, className){
@@ -143,9 +142,10 @@ function Passaro(alturaJogo){
 
 function Progresso() {
     this.elemento = novoElemento('span', 'progresso')
+
     this.atualizarPontos = ponto => {
-        this.elemento.innerHTML    = ponto
-        score = ponto
+        this.elemento.innerHTML = ponto
+        scoreEl.innerHTML = `Score: ${ponto}`
     }
 
     this.killElement = function () {

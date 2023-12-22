@@ -26,6 +26,9 @@ body {
     background-color: #0D262D;
     color: #fff;
     height: 100%;
+
+
+    transition: transform 0.5s ease;
 }
 
 .conteudo {
@@ -153,7 +156,7 @@ body {
 
 /* ================== MODALS ================== */
 #fade{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
@@ -231,4 +234,71 @@ body {
 }
 #modal-replay.hiden{
     opacity: 1;
+}
+
+/* ================ MEDIA ================ */
+@media(max-width: 768px){
+    @media screen and (orientation: landscape) {
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        #title{
+            display: none;
+        }
+    
+        #fade{
+            height: 100%;
+            width: 100%;
+            padding: 0;
+        }
+    
+        .conteudo {
+            height: 100%;
+            width: 100%;
+        }
+        
+        
+        /* ==================== */
+        [wm-flappy]{
+            height: 550px;
+            width: 1400px;
+            max-width: 90%;
+        }
+         
+    }
+    @media screen and (orientation: portrait) {
+        body{
+            transform-origin: center;
+            transform: rotate();
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #title{
+            display: none;
+        }
+    
+        #fade{
+            left: 0 ;
+            height: 100%;
+            width: 200%;
+            padding: 0;       
+        }
+    
+        
+        
+        /* ==================== */
+        [wm-flappy]{
+            height: 550px;
+            width: 200px;
+            max-width: 90%;
+        }
+         
+    }
+    
 }

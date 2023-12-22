@@ -1,4 +1,3 @@
-
 const playButton =  document.querySelector('#play')
 const replayButton =  document.querySelector('#replay')
 const modalPlay  =  document.querySelector('#modal-play')

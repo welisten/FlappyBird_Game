@@ -26,6 +26,7 @@ body {
     background-color: #0D262D;
     color: #fff;
     height: 100%;
+    width: 100%;
 }
 
 .conteudo {
@@ -44,8 +45,8 @@ body {
 [wm-flappy]{
     position: relative;
     border: 5px solid dodgerblue;
-    height: 700px;
-    width: 1200px;
+    height: 80%;
+    width: 90%;
     max-width: 90%;
     margin: 15px;
     background:linear-gradient(45deg, #a5e1f5 25%, #049dcf) ;
@@ -231,4 +232,41 @@ body {
 }
 #modal-replay.hiden{
     opacity: 1;
+}
+
+/* ==================== MEDIA ==================== */
+@media(max-width: 768px){
+    @media screen and (orientation: portrait) {
+        .conteudo{
+            justify-content: center;
+        }
+        [wm-flappy]{
+            height: calc(100vw * 0.9);
+            min-width: 90vh
+        }
+
+        #fade{
+            min-height: 100vw;
+            min-width: 100vh;
+            transform: translateX(-50%);
+        }
+
+        h1{
+            display:none;
+        }
+    }
+
+    @media screen and (orientation: landscape) {
+        .conteudo{
+            justify-content: center;
+        }
+        #fade{
+            height: 100%;
+            width: 100%;
+        }
+        h1{
+            height: 90%;
+            display: none;
+        }
+    }
 }

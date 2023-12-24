@@ -12,7 +12,7 @@ function adjustScreen(){
     if(window.innerHeight > window.innerWidth){
         flappyContainer.style.transform = `rotate(90deg)`
         // titleContainer.style.display = `none`
-        // modalContainer.style.transform = `rotate(90deg)`
+        modalContainer.style.transform = `rotate(90deg)`
 
         flappyContainer.style.width  = `${screenHeight}px` 
         flappyContainer.style.height = `${screenWidth}px`

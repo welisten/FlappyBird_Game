@@ -1,5 +1,9 @@
 *{
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+
 }
 
 @font-face{
@@ -13,20 +17,18 @@
     src: url('../fonts/Oswald-Regular.ttf') format('truetype');
 }
 
-* {
-    font-family: 'Oswald', sans-serif;
-}
-
 html {
     height: 100%;
+    font-size: 62.5%;
 }
 
 body {
+    font-size: 1.6rem;
     margin: 0;
     background-color: #0D262D;
     color: #fff;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 .conteudo {
@@ -34,17 +36,12 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100%;
+    min-width: 100%;
 }
 
-
-
-
-
-
-/* ==================== */
 [wm-flappy]{
     position: relative;
-    border: 5px solid dodgerblue;
+    border: .5rem solid dodgerblue;
     height: 80%;
     width: 90%;
     max-width: 90%;
@@ -55,15 +52,15 @@ body {
 
 .passaro {
     position: absolute;
-    width: 60px;
-    left: calc(50% - 30px);
+    width: 6rem;
+    left: calc(50% - 3rem);
     z-index: 10;
 }
 
 .par-de-barreiras{
     position: absolute;
     top: 0;
-    height: calc(100% - 20px);
+    height: calc(100% - 2rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -77,31 +74,31 @@ body {
 }
 
 .barreira .borda{
-    height: 30px;
-    width: 130px;
+    height: 3rem;
+    width: 13rem;
     background: linear-gradient(90deg,#a5e82e, #639301);
-    border: 2px solid #304605
+    border: .2rem solid #304605
 }
 
 .barreira .corpo{
-    height: 150px;
-    width: 110px;
+    height: 15rem;
+    width: 11rem;
     background: linear-gradient(90deg,#a5e82e, #639301);
-    border-left:  2px solid #304605;
-    border-right: 2px solid #304605;
+    border-left:  .2rem solid #304605;
+    border-right: .2rem solid #304605;
 } 
 
 .chao{
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
-    height: 20px;
+    height: 2rem;
     width: 100%;
 }
 
 .fundo{
     position: absolute;
-    bottom: 20px;
+    bottom: 2rem;
     width: 50%;
     z-index: 8;
 }
@@ -113,41 +110,41 @@ body {
 .sol{
     position: absolute;
     z-index: 7;
-    width: 300px;
+    width: 30rem;
     top: 30%;
 }
 
 .progresso{
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 1rem;
+    right: 1rem;
     font-family: 'Pixel';
-    font-size: 70px;
+    font-size: 7rem;
     z-index: 10 ;
 }
 
 .chao2{
     position: absolute;
     bottom: 0px;
-    left: 238px;
+    left: 23.7rem;
     height: 20px;
 }
 .chao3{
     position: absolute;
     bottom: 0px;
-    left: 476px;
+    left: 47.5rem;
     height: 20px;
 }
 .chao4{
     position: absolute;
     bottom: 0px;
-    left: 714px;
+    left: 71.2rem;
     height: 20px;
 }
 .chao5{
     position: absolute;
     bottom: 0px;
-    left: 952px;
+    left: 94.5rem;
     height: 20px;
 }
 
@@ -162,7 +159,7 @@ body {
     background-color: rgba(0, 0, 0, .6);
     z-index: 15;
     pointer-events: none;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .modal{
@@ -175,11 +172,12 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #0D262D;
-    border: 3px solid #049dcf;
-    padding: 1rem;
+    border: .3rem solid #049dcf;
+    padding: 1.5rem;
     z-index: 20;
 
 }
+
 #modal-replay{
     min-width: 500px;
 }
@@ -200,9 +198,9 @@ body {
 }
 
 .modal-button{
-    padding: 8px 30px;
+    padding: .5rem 1.7rem;
     margin: 1rem;
-    border-radius: 15px;
+    border-radius: 1rem;
     border: none;
     background-color: #ddb811;
     color: #fff;
@@ -214,6 +212,7 @@ body {
     opacity: 0.8;
     cursor: pointer;
 }
+
 .modal-button i{
     font-size: 1.9rem;
     margin-left: 1rem;
@@ -239,34 +238,76 @@ body {
     @media screen and (orientation: portrait) {
         .conteudo{
             justify-content: center;
+            overflow: hidden;
+            padding: 70px;
         }
+        
         [wm-flappy]{
-            height: calc(100vw * 0.9);
-            min-width: 90vh
+            min-width: 90vh;
+            min-height: 75vw;
         }
+
+        .sol{
+            width: 20rem;
+        }
+
+        .passaro{
+            width: 4rem;
+        }
+        
+
+        .barreira .borda{
+            height: 2rem;
+            width: 8.7rem;
+            border: .1rem solid #304605
+        }
+
+        .barreira .corpo{
+            height: 10rem;
+            width: 7.4rem;
+            border-left:  .1rem solid #304605;
+            border-right: .1rem solid #304605;
+        } 
+
+        .progresso{
+            font-size: 5rem;
+        }
+
+
 
         #fade{
-            min-height: 100vw;
-            min-width: 100vh;
-            transform: translateX(-50%);
+            max-width: 100vh;
+            height: 100vw;
+            transform-origin: top left;
+            transform: rotate(90deg) translateY(-100%);
+        }
+        
+        .modal{
+            max-height: 60%;
+            transform: translate(-50%, -40%);
+            font-size: 1.2rem;
+        }
+        #modal-replay{
+            min-width: 300px;
         }
 
-        h1{
-            display:none;
+        .title{
+            display: none;
         }
     }
 
     @media screen and (orientation: landscape) {
         .conteudo{
             justify-content: center;
+            font-size: 1.6rem;
         }
         #fade{
             height: 100%;
             width: 100%;
         }
-        h1{
+        .title{
             height: 90%;
             display: none;
-        }
+        }        
     }
 }

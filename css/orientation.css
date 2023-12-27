@@ -1,0 +1,59 @@
+.conteudo{
+    justify-content: center;
+    overflow: hidden;
+    padding: 70px;
+    background-color: aliceblue;
+}
+
+[wm-flappy]{
+    min-width: 90vh;
+    min-height: 75vw;
+}
+
+.sol{
+    width: 20rem;
+}
+
+.passaro{
+    width: 4rem;
+}
+
+
+.barreira .borda{
+    height: 2rem;
+    width: 8.7rem;
+    border: .1rem solid #304605
+}
+
+.barreira .corpo{
+    height: 10rem;
+    width: 7.4rem;
+    border-left:  .1rem solid #304605;
+    border-right: .1rem solid #304605;
+} 
+
+.progresso{
+    font-size: 5rem;
+}
+
+
+
+#fade{
+    max-width: 100vh;
+    height: 100vw;
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-100%);
+}
+
+.modal{
+    max-height: 60%;
+    transform: translate(-50%, -40%);
+    font-size: 1.2rem;
+}
+#modal-replay{
+    min-width: 300px;
+}
+
+.title{
+    display: none;
+}

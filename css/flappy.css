@@ -240,7 +240,6 @@ body {
             justify-content: center;
             overflow: hidden;
             padding: 70px;
-            background-color: red; /*retirar*/
         }
         
         [wm-flappy]{
@@ -301,7 +300,6 @@ body {
         .conteudo{
             justify-content: center;
             font-size: 1.6rem;
-            background-color: #fee500;/*retirar*/
         }
         #fade{
             height: 100%;

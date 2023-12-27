@@ -1,16 +1,14 @@
 .conteudo{
     justify-content: center;
     overflow: hidden;
-    padding: 70px;
-    background-color: aliceblue;
 }
 
 [wm-flappy]{
     min-width: 90vh;
-    min-height: 75vw;
+    min-height: 60vw;
 }
 
-.sol{
+/* .sol{
     width: 20rem;
 }
 
@@ -34,7 +32,7 @@
 
 .progresso{
     font-size: 5rem;
-}
+} */
 
 
 

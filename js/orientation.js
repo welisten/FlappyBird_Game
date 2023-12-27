@@ -19,8 +19,10 @@ function adjustScreen(){
         document.head.appendChild(styleTag)
 
         flappyContainer.style.transform = `rotate(90deg)`
-        flappyContainer.style.width  = `${screenHeight}px` 
-        flappyContainer.style.height = `${screenWidth}px`
+        flappyContainer.style.width  = `${screenHeight - 40}px` 
+        flappyContainer.style.height = `${screenWidth - 40}px`
+
+        modalContainer
         modalContainer.style.width  = `${screenHeight}px` 
         modalContainer.style.height = `${screenWidth}px`
 

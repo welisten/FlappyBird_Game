@@ -10,18 +10,18 @@
     font-family: 'Pixel';
     src: url('../fonts/Pixel.ttf');
 }
-/* estilo.css */
 
 @font-face {
     font-family: 'Oswald';
     src: url('../fonts/Oswald-Regular.ttf') format('truetype');
 }
 
+/* ================================================================================================= */
+
 html {
     height: 100%;
     font-size: 62.5%;
 }
-
 body {
     font-size: 1.6rem;
     margin: 0;
@@ -30,7 +30,6 @@ body {
     height: 100vh;
     width: 100vw;
 }
-
 .conteudo {
     display: flex;
     flex-direction: column;
@@ -38,7 +37,6 @@ body {
     min-height: 100%;
     min-width: 100%;
 }
-
 [wm-flappy]{
     position: relative;
     border: .5rem solid dodgerblue;
@@ -49,14 +47,12 @@ body {
     background:linear-gradient(45deg, #a5e1f5 25%, #049dcf) ;
     overflow: hidden;
 }
-
 .passaro {
     position: absolute;
     width: 6rem;
     left: calc(50% - 3rem);
     z-index: 10;
 }
-
 .par-de-barreiras{
     position: absolute;
     top: 0;
@@ -66,20 +62,17 @@ body {
     justify-content: space-between;
     z-index: 9;
 }
-
 .barreira{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .barreira .borda{
     height: 3rem;
     width: 13rem;
     background: linear-gradient(90deg,#a5e82e, #639301);
     border: .2rem solid #304605
 }
-
 .barreira .corpo{
     height: 15rem;
     width: 11rem;
@@ -87,7 +80,6 @@ body {
     border-left:  .2rem solid #304605;
     border-right: .2rem solid #304605;
 } 
-
 .chao{
     position: absolute;
     bottom: 0;
@@ -95,25 +87,21 @@ body {
     height: 2rem;
     width: 100%;
 }
-
 .fundo{
     position: absolute;
     bottom: 2rem;
     width: 50%;
     z-index: 8;
 }
-
 .fundo:nth-of-type(1){
     left: 50%;
 }
-
 .sol{
     position: absolute;
     z-index: 7;
     width: 30rem;
     top: 30%;
 }
-
 .progresso{
     position: absolute;
     top: 1rem;
@@ -122,7 +110,6 @@ body {
     font-size: 7rem;
     z-index: 10 ;
 }
-
 .chao2{
     position: absolute;
     bottom: 0px;
@@ -147,9 +134,7 @@ body {
     left: 94.5rem;
     height: 20px;
 }
-
-
-/* ================== MODALS ================== */
+/* =============================================== MODALS ========================================== */
 #fade{
     position: fixed;
     top: 0;
@@ -161,7 +146,6 @@ body {
     pointer-events: none;
     padding: 1.5rem;
 }
-
 .modal{
     position: fixed;
     top: 50%;
@@ -177,11 +161,9 @@ body {
     z-index: 20;
 
 }
-
 #modal-replay{
     min-width: 500px;
 }
-
 .modal-header, .modal-body{
     width: 90%;
     text-align: center;
@@ -189,14 +171,12 @@ body {
     margin-bottom: .5rem;
     padding-bottom: .5rem;
 }
-
 .modal-header h1{
     color: #fee500;
     margin: 0;
     letter-spacing: 2px;
     font-size: 3rem;
 }
-
 .modal-button{
     padding: .5rem 1.7rem;
     margin: 1rem;
@@ -212,17 +192,14 @@ body {
     opacity: 0.8;
     cursor: pointer;
 }
-
 .modal-button i{
     font-size: 1.9rem;
     margin-left: 1rem;
 }
-
 .modal-button:hover{
     opacity: 1;
     transform: scale(1.2);
 }
-
 #modal-play.hiden, #fade.hiden{
     opacity: 0;
 }
@@ -233,81 +210,83 @@ body {
     opacity: 1;
 }
 
-/* ==================== MEDIA ==================== */
-@media(max-width: 768px){
-    @media screen and (orientation: portrait) {
-        .conteudo{
-            justify-content: center;
-            overflow: hidden;
-            padding: 70px;
-        }
-        
-        [wm-flappy]{
-            min-width: 90vh;
-            min-height: 75vw;
-        }
+/* =============================================== MIDIA =========================================== */
 
-        .sol{
-            width: 20rem;
-        }
-
-        .passaro{
-            width: 4rem;
-        }
-        
-
-        .barreira .borda{
-            height: 2rem;
-            width: 8.7rem;
-            border: .1rem solid #304605
-        }
-
-        .barreira .corpo{
-            height: 10rem;
-            width: 7.4rem;
-            border-left:  .1rem solid #304605;
-            border-right: .1rem solid #304605;
-        } 
-
-        .progresso{
-            font-size: 5rem;
-        }
-
-
-
-        #fade{
-            max-width: 100vh;
-            height: 100vw;
-            transform-origin: top left;
-            transform: rotate(90deg) translateY(-100%);
-        }
-        
-        .modal{
-            max-height: 60%;
-            transform: translate(-50%, -40%);
-            font-size: 1.2rem;
-        }
-        #modal-replay{
-            min-width: 300px;
-        }
-
-        .title{
-            display: none;
-        }
+@media(max-height: 500px){
+    .conteudo{
+        justify-content: center;
+        font-size: 1.6rem;
     }
-
-    @media screen and (orientation: landscape) {
-        .conteudo{
-            justify-content: center;
-            font-size: 1.6rem;
-        }
-        #fade{
-            height: 100%;
-            width: 100%;
-        }
-        .title{
-            height: 90%;
-            display: none;
-        }        
+    #fade{
+        height: 100%;
+        width: 100%;
+    }
+    .title{
+        display: none;
+    }        
+    .passaro {
+        width: 4rem;
+    }
+    .par-de-barreiras{
+    height: calc(100% - 1.5rem);
+    }
+    .barreira .borda{
+        height: 2rem;
+        width: 8.7rem;
+        border: .1rem solid #304605
+    }
+    .barreira .corpo{
+        height: 10rem;
+        width: 7.5rem;
+        border-left:  .2rem solid #304605;
+        border-right: .2rem solid #304605;
+    } 
+    .chao{
+        height: 1.5rem;
+    }
+    .fundo{
+        bottom: 1.5rem;
+    }
+    .fundo:nth-of-type(1){
+        left: 50%;
+    }
+    .sol{
+        width: 20rem;
+    }
+    .progresso{
+        font-size: 5rem;
+    }
+    .chao2{
+        height: 1.5rem;
+    }
+    .chao3{
+        height: 1.5rem;
+    }
+    .chao4{
+        height: 1.5rem;
+    }
+    .chao5{
+        height: 1.5rem;
+    }
+    .modal{
+        font-size: 1.8rem;
+        min-width: 600px;
+    
+    }
+    #modal-replay{
+        min-width: 600px;
+        min-height: 200px;
+    }
+    .modal-header h1{
+        color: #fee500;
+        margin: 0;
+        letter-spacing: 2px;
+        font-size: 3rem;
+    }
+    .modal-button{
+        font-size: 3rem;
+    }
+    .modal-button i{
+        font-size: 2rem;
     }
 }

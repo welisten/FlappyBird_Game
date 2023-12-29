@@ -55,8 +55,8 @@ function adjustScreen(){
         flappyContainer.style.width  = `${screenHeight - screenOuterHeight}px` 
         flappyContainer.style.height = `${screenWidth - screenOuterWidth}px`
 
-        modalContainer.style.width  = `${screenHeight - screenOuterHeight}px` 
-        modalContainer.style.height = `${screenWidth - screenOuterWidth}px`
+        modalContainer.style.width  = `${screenHeight}px` 
+        modalContainer.style.height = `${screenWidth}px`
 
     // } else if(window.innerWidth >= 768 && window.orientation != 0){
     //     const styleTag = document.createElement('link')

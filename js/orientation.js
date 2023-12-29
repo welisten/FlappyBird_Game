@@ -4,23 +4,25 @@ const titleContainer = document.querySelector('.title')
 const modalContainer = document.querySelector('#fade')
 const conteudo = document.querySelector('.conteudo')
 
-const screenWidth  = document.documentElement.clientWidth 
-const screenHeight = document.documentElement.clientHeight
+const screenWidth  = window.innerWidth 
+const screenHeight = window.innerHeight
+const outerWidth  = window.outerWidth
+const outerHeight = window.outerHeight
 
 
-console.log(flappyContainer, titleContainer, modalContainer)
+console.log(screenHeight, screenHeight, outerHeight, outerWidth)
 function adjustScreen(){
     if(window.innerHeight > window.innerWidth){
         const styleTag = document.createElement('link')
-        const modalPlay = document.querySelector('#modal-play')
-
         styleTag.setAttribute('href', './css/orientation.css')
-        styleTag.setAttribute('rel', 'stylesheet') 
+        styleTag.setAttribute('rel', 'stylesheet')
         document.head.appendChild(styleTag)
         
-        const modal = document.createElement('div')
-        modal.classList.add('modal')
-        modal.id = 'modal-warning'
+        const modalPlay = document.querySelector('#modal-play')
+        
+        const newModal = document.createElement('div')
+        newModal.classList.add('modal')
+        newModal.id = 'modal-warning'
 
         const modalHeader = document.createElement('div')
         modalHeader.classList.add('modal-header')
@@ -44,14 +46,14 @@ function adjustScreen(){
         modalWarningSpan.innerHTML = `<i class="fa-solid fa-mobile-screen-button"></i>`
 
         modalPlay.classList.toggle('hiden')
-        modal.appendChild(modalHeader)
-        modal.appendChild(modalBody)
+        newModal.appendChild(modalHeader)
+        newModal.appendChild(modalBody)
         modalBody.appendChild(modalWarningSpan)
-        modalContainer.appendChild(modal)
+        modalContainer.appendChild(newModal)
 
         flappyContainer.style.transform = `rotate(90deg)`
-        flappyContainer.style.width  = `${screenHeight - 40}px` 
-        flappyContainer.style.height = `${screenWidth - 40}px`
+        flappyContainer.style.width  = `${screenHeight}px` 
+        flappyContainer.style.height = `${screenWidth }px`
 
         modalContainer.style.width  = `${screenHeight}px` 
         modalContainer.style.height = `${screenWidth}px`

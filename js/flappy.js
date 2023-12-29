@@ -5,6 +5,7 @@ const modalPlay  =  document.querySelector('#modal-play')
 const modalReplay  =  document.querySelector('#modal-replay')
 const fadeEl     =  document.querySelector('#fade')
 const scoreEl    = modalReplay.querySelector('h2')
+const mobileBtn  = document.querySelectorAll('.mobileBtn')
 
 // compartimentar
 function novoElemento(tagName, className){
@@ -124,6 +125,12 @@ function Passaro(alturaJogo){
 
     window.onkeydown = e => voando = true
     window.onkeyup = e => voando = false
+    mobileBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            voando ==  false ? voando = true : voando = false
+            console.log(voando)
+        })
+    })
 
     this.animar = () => {
         const novoY = this.getY() + (voando ? 8 : -5)

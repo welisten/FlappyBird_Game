@@ -31,6 +31,7 @@ body {
     width: 100vw;
 }
 .conteudo {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +39,6 @@ body {
     min-width: 100%;
 }
 [wm-flappy]{
-    position: relative;
     border: .5rem solid dodgerblue;
     height: 80%;
     width: 90%;
@@ -134,6 +134,48 @@ body {
     left: 94.5rem;
     height: 20px;
 }
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 50px;
+    width: 100%;
+    z-index: 200;
+}
+
+.mobileBtn{
+    visibility: hidden;
+}
+
+.mobileBtn:nth-child(1){
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ffffff6b;
+    border: 2px solid #ffffffd5;
+    z-index: 200;
+
+}
+.mobileBtn:nth-child(2){
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ffffff6b;
+    border: 2px solid #ffffffd5;
+    z-index: 200;
+}
+
+.hiden{
+    display: none;
+}
 /* =============================================== MODALS ========================================== */
 #fade{
     position: fixed;
@@ -216,6 +258,9 @@ body {
     .conteudo{
         justify-content: center;
         font-size: 1.6rem;
+    }
+    .mobileBtn{
+        visibility: visible;
     }
     #fade{
         height: 100%;

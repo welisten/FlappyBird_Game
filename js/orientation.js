@@ -4,10 +4,10 @@ const titleContainer = document.querySelector('.title')
 const modalContainer = document.querySelector('#fade')
 const conteudo = document.querySelector('.conteudo')
 
-const screenWidth  = window.innerWidth 
+const screenOuterWidth  = window.outerWidth
+const screenOuterHeight = window.outerHeight
+const screenWidth  = window.innerWidth
 const screenHeight = window.innerHeight
-const outerWidth  = window.outerWidth
-const outerHeight = window.outerHeight
 
 
 console.log(screenHeight, screenHeight, outerHeight, outerWidth)
@@ -52,11 +52,11 @@ function adjustScreen(){
         modalContainer.appendChild(newModal)
 
         flappyContainer.style.transform = `rotate(90deg)`
-        flappyContainer.style.width  = `${screenHeight}px` 
-        flappyContainer.style.height = `${screenWidth }px`
+        flappyContainer.style.width  = `${screenHeight - screenOuterHeight}px` 
+        flappyContainer.style.height = `${screenWidth - screenOuterWidth}px`
 
-        modalContainer.style.width  = `${screenHeight}px` 
-        modalContainer.style.height = `${screenWidth}px`
+        modalContainer.style.width  = `${screenHeight - screenOuterHeight}px` 
+        modalContainer.style.height = `${screenWidth - screenOuterWidth}px`
 
     // } else if(window.innerWidth >= 768 && window.orientation != 0){
     //     const styleTag = document.createElement('link')

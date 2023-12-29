@@ -67,6 +67,11 @@ function adjustScreen(){
         modalContainer.style.transform = `rotate(0deg)`
     }
 }
+
+document.addEventListener('orientationchange', (e) => {
+    location.reload()
+})
+
 function lockPortraitOrientation(){
     adjustScreen()
     window.addEventListener('resize', adjustScreen)

@@ -68,7 +68,7 @@ function adjustScreen(){
     }
 }
 
-document.addEventListener('orientationchange', (e) => {
+window.addEventListener('orientationchange', (e) => {
     location.reload()
 })
 

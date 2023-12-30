@@ -1,0 +1,136 @@
+.conteudo{
+    justify-content: center;
+    overflow: hidden;
+    font-size: 1.6rem;
+    /* height: 100vw; */
+}
+
+[wm-flappy]{
+    min-width: 90vh;
+    min-height: 60vw;
+    height: 80vw;
+}
+
+.sol{
+    width: 30%;
+}
+
+.passaro{
+    width: 5%;
+}
+
+.par-de-barreira{
+    height: calc(100% - 2rem);
+}
+
+
+.barreira .borda{
+    height: 4rem;
+    width: 17.4rem;
+    border: .2rem solid #304605
+}
+
+.barreira .corpo{
+    height: 20rem;
+    width: 14.8rem;
+    border-left:  .2rem solid #304605;
+    border-right: .2rem solid #304605;
+} 
+
+.progresso{
+    font-size: 10rem;
+}
+
+
+
+#fade{
+    max-width: 100vh;
+    height: 100vw;
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-100%);
+}
+
+.modal{
+    max-height: 60%;
+    min-width: 500px;
+    min-height: 200px;
+    transform: translate(-50%, -40%);
+    font-size: 1.2rem;
+}
+#modal-replay{
+    min-width: 300px;
+}
+#modal-warning .modal-header h1{
+    font-size: 4rem;
+    color: white;
+}
+#modal-warning .modal-header h1 i {
+    color: red;
+}
+#modal-warning .modal-body{
+    font-size: 2.5rem;
+    padding: 3rem;
+}
+#modal-warning .modal-body p{
+    margin-bottom: 3rem;
+}
+#modal-warning .modal-body span{
+    padding: .5rem 5rem;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+    font-size: 4rem;
+    border: none;
+    background-color: #ddb811;
+    color: #fff;
+    animation: scale 2s infinite;
+
+}
+#modal-warning .modal-body span i{
+    animation: rotation 2s infinite;
+}
+
+.title{
+    display: none;
+}
+/* =========================================== Animations ========================================== */
+@keyframes rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(90deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+
+}
+
+@keyframes scale{
+    0%{
+        transform: scale(1.0);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1.0);
+    }
+
+}
+
+@media(orientation: landscape) and (min-width: 1000){
+    .conteudo{
+        justify-content: center;
+        font-size: 1.6rem;
+    }
+    #fade{
+        height: 100%;
+        width: 100%;
+    }
+    .title{
+        height: 90%;
+        display: none;
+    }        
+
+}
